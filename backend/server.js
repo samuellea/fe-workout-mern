@@ -2,11 +2,14 @@
 require('dotenv').config();
 
 const express = require('express');
+const workoutRoutes = require('./routes/workouts');
 
-// express app
+// express app - this is our API
 const app = express();
 
 // 📦 middleware
+app.use(express.json()); // this will parse any bodies coming in on requests as JSON, and attaches that on the request object as req.body, so we can access it in the request handlers on our routes
+
 app.use((req, res, next) => {
   // this will fire for every request that comes in to our express app
   console.log(req.path, req.method);
@@ -15,15 +18,7 @@ app.use((req, res, next) => {
 });
 
 // 🪢 routes
-app.get('/', (req, res) => {
-  res.json({ msg: 'Welcome to the app' });
-});
-
-app.get('/workouts', (req, res) => {});
-app.post('/workouts', (req, res) => {});
-app.get('/workouts/:id', (req, res) => {});
-app.delete('/workouts/:id', (req, res) => {});
-app.patch('/workouts/:id', (req, res) => {});
+app.use('/api/workouts/', workoutRoutes); // <-- attaches all the routes in workouts.js to our express app on the api endpoint '/api/workouts'
 
 // 📡 listen for requests on port 4000
 app.listen(process.env.PORT, () => {
