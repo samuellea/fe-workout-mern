@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      hey gang and welcome to your very first moon stack tutorial [Music] all
+      right so to begin with i just want to talk a little bit about what the
+      mern stack is the different technologies involved and how they all work
+      together and also just to explain exactly what we're going to be building
+      in this series so the mern stack is basically a bunch of four different
+      technologies that we can use together to make an interactive and data
+      driven web application or website and if you master the mern stack then
+      technically speaking you're a full stack developer meaning you build the
+      front end of a website and the back end of a website that's generally what
+      we mean when we say full stack the front end and the back end the whole
+      shazam now there's loads of different variations of a full stack and the
+      mirn stack is just one of them and it consists of react which is the
+      front-end library that we use node and express which we use to make the
+      back end api that we interact with from the front end and then finally
+      mongodb which is a nosql database to store application data in like user
+      data or blogs or whatever other data that your website uses and together
+      they spell out the acronym mern so how these all work together is as
+      follows on the front end we have the browser where we see the website and
+      our react application runs in the browser to power the website and
+      typically handles routing in the browser as well to show different website
+      pages then when we need to show data in the website like blogs or even
+      just authenticate users we'd send a request from the front end to the back
+      end now the back end is an express app running in a node.js environment
+      and if you don't already know express is just a framework for node that
+      lets us easily create apis so the node and express api would handle our
+      request on the back end and typically interact with a database to get data
+      or update data or delete data etc it would also handle authentication
+      requests to do things like log a use in log them out or sign them up as
+      well as protect certain api endpoints from unauthenticated users so that
+      only logged in users can access certain resources anyway once it has the
+      data from the database it would then send a response with that data back
+      to the browser the client and the react app would handle that response by
+      outputting the data in some kind of template now you might be thinking
+      what's the point of this middle node api step in order to fetch the data
+      why can't i just reach out directly to mongodb for the data and skip this
+      middle bit entirely and the answer is that if you do that you'd be
+      exposing sensitive data in your front end code in the browser such as an
+      admin username and password to access your database and by putting that
+      logic in the back end instead you're hiding that sensitive code from
+      people who use your website so that's the moon stack from a bird's eye
+      view and these are the four different technologies we'll be using to build
+      a full stack application in this series react node express and mongodb so
+      that project that we're going to make looks something like this it's a
+      pretty simple application to track exercises that you might do but it
+      pulls together all the core concepts of a full stack application and i
+      think it serves as a really good introductory project i will also be
+      adding authentication into the mix but i'm splitting that section off into
+      a separate course that's going to be released right after this one and the
+      reason i'm doing that is because a lot of other mern tutorials start out
+      with authentication right off the bat and generally speaking adding
+      authentication to a full stack app is arguably one of the hardest parts
+      about it and personally i don't think it's the best way to introduce the
+      mern stack to developers who want to learn it so we'll be starting out by
+      making the project without authentication and then adding in
+      authentication in the next course coming right after this one and that's
+      going to look something like this where users can sign up log in and log
+      out and we protect the dashboard from anyone who's not logged in and also
+      every user has their own exercises listed on the dashboard as well so that
+      you don't see other people's just your own so like i said that's coming
+      right after this course once we've nailed the bread and butter of the mern
+      stack now before you start this course i would strongly recommend that you
+      have at least a very basic understanding of each of the four technologies
+      we're going to be using it's not absolutely essential because i won't be
+      skipping bits out and i will explain everything as we go along but i'm not
+      going to pretend that knowing about them prior to this course is not going
+      to be extremely beneficial so if you want to learn the basics of those
+      four things in isolation first of all i've got introductory courses to
+      each one of them so note and express mongodb and also react so i'm going
+      to leave the links to each one of those courses down below this video also
+      since we're using node.js to make our backend api in this course it goes
+      without saying that you're going to need node installed on your computer
+      and you can get that from nodejs.org just hit this download button right
+      here and follow the installation steps and to make sure it's installed
+      correctly open up any kind of terminal you can use command prompt or
+      whatever else you want to use and then just type node then a space then
+      hyphen v and then press enter and if you see a version number then you
+      know it's installed if you get an error then it's not installed correctly
+      and you'll need to try again and then finally as always i've made course
+      files for every single lesson in the series and you can find those here on
+      this github repo the link to this is going to be down below the video so
+      if you want to see or download the code for a specific lesson you just
+      need to select that lesson from the branch drop down for example to get
+      the lesson two code you select the lesson to branch and then to download
+      this code just head to the green code button and then choose to download a
+      zip folder of this lesson there's instructions on how to use the course
+      files down here as well since you'll have to run an npm install for the
+      project to work once you download it so there we go my friends that's your
+      course introduction out of the way and in the next lesson we're going to
+      start work on the node and express back end to begin with by the way if
+      you want to watch this entire course now without youtube adverts you can
+      do it's all up on the net ninja website netninja.dev you can buy the
+      course for two dollars to get instant access to all of it or you can sign
+      up to net ninja pro and get instant access to all of my courses without
+      adverts as well as premium courses not found on youtube including my udemy
+      ones that's nine dollars a month and you can get your first month half
+      price when you use this promo code right here so i'm going to leave this
+      link down below in the video description for you to sign up and i really
+      hope you enjoyed this series and please do not forget to share subscribe
+      and like the videos that really helps a lot and i'm going to see you in
+      the very next lesson
+    </p>
+  </body>
+</html>
