@@ -1,6 +1,7 @@
 // npm install dotenv
 require('dotenv').config();
 
+const mongoose = require('mongoose');
 const express = require('express');
 const workoutRoutes = require('./routes/workouts');
 
@@ -20,7 +21,15 @@ app.use((req, res, next) => {
 // 🪢 routes
 app.use('/api/workouts/', workoutRoutes); // <-- attaches all the routes in workouts.js to our express app on the api endpoint '/api/workouts'
 
-// 📡 listen for requests on port 4000
-app.listen(process.env.PORT, () => {
-  console.log('listening on port', process.env.PORT);
-});
+// 🥭 connect to MongoDB
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    // 📡 listen for requests on port 4000, only AFTER we've connected to MongoDB
+    app.listen(process.env.PORT, () => {
+      console.log('connected to db & listening on port', process.env.PORT);
+    });
+  })
+  .then((error) => {
+    console.log(error);
+  });
