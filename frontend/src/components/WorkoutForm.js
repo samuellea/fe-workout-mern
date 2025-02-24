@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import styles from '../styles/WorkoutForm.module.css';
+import { useWorkoutsContext } from '../hooks/useWorkoutsContext';
 
-const WorkoutForm = ({ fetchWorkouts }) => {
+const WorkoutForm = () => {
+  const { workouts, dispatch } = useWorkoutsContext();
+
   const [title, setTitle] = useState('');
   const [load, setLoad] = useState('');
   const [reps, setReps] = useState('');
@@ -27,7 +30,8 @@ const WorkoutForm = ({ fetchWorkouts }) => {
       setTitle('');
       setLoad('');
       setReps('');
-      fetchWorkouts();
+      // now update the context, so our global state is in sync with the db
+      dispatch({ type: 'CREATE_WORKOUT', payload: json });
     }
   };
 

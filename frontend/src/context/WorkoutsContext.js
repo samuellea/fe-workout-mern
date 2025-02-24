@@ -16,7 +16,7 @@ export const workoutsReducer = (state, action) => {
     case 'SET_WORKOUTS':
       return { workouts: action.payload }; // here is where the state is actually updated
     case 'CREATE_WORKOUT':
-      return { workouts: [...state.workouts, action.payload] };
+      return { workouts: [action.payload, ...state.workouts] };
     default:
       return state;
   }

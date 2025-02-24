@@ -30,7 +30,7 @@ const Home = () => {
           ))}
       </div>
       <div className="workoutForm">
-        <WorkoutForm fetchWorkouts={fetchWorkouts} />
+        <WorkoutForm />
       </div>
     </div>
   );
