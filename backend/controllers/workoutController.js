@@ -26,6 +26,7 @@ const getWorkout = async (req, res) => {
 
 // POST a new workout
 const createWorkout = async (req, res) => {
+  console.log(req.body);
   const { title, reps, load } = req.body;
 
   // add document to db

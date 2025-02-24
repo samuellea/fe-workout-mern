@@ -1,0 +1,26 @@
+.workoutDetails {
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 5px;
+  padding: 10px;
+  background-color: white;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-weight: 500;
+  color: rgb(55, 176, 118);
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 4px;
+}
+
+strong {
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  font-weight: 100;
+}
