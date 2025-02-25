@@ -9,6 +9,7 @@ const WorkoutForm = () => {
   const [load, setLoad] = useState('');
   const [reps, setReps] = useState('');
   const [error, setError] = useState(null);
+  const [emptyFields, setEmptyFields] = useState([]);
 
   const handleSubmit = async (e) => {
     console.log('BING!');
@@ -23,8 +24,11 @@ const WorkoutForm = () => {
     const json = await response.json();
     if (!response.ok) {
       setError(json.error);
+      console.log(json);
+      setEmptyFields(json.emptyFields);
     }
     if (response.ok) {
+      setEmptyFields([]);
       setError(null);
       console.log('new workout added', json);
       setTitle('');
@@ -44,18 +48,21 @@ const WorkoutForm = () => {
         type="text"
         onChange={(e) => setTitle(e.target.value)}
         value={title}
+        className={emptyFields.includes('title') ? styles.error : ''}
       />
       <label>Load:</label>
       <input
         type="number"
         onChange={(e) => setLoad(e.target.value)}
         value={load}
+        className={emptyFields.includes('load') ? styles.error : ''}
       />
       <label>Reps:</label>
       <input
         type="number"
         onChange={(e) => setReps(e.target.value)}
         value={reps}
+        className={emptyFields.includes('reps') ? styles.error : ''}
       />
 
       <button>Add Workout</button>

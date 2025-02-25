@@ -29,16 +29,24 @@ const createWorkout = async (req, res) => {
   console.log(req.body);
   const { title, reps, load } = req.body;
 
+  // check if any fields on the req.body are empty - if so, store in 'emptyFields' arr
+  const emptyFields = Object.keys(req.body).filter(
+    (key) => req.body[key].length === 0
+  );
+
+  if (emptyFields.length) {
+    return res
+      .status(400)
+      .json({ error: 'Please fill in all fields', emptyFields });
+  }
+
   // add document to db
+  // prettier-ignore
   try {
-    const workout = await Workout.create({
-      title,
-      reps,
-      load,
-    });
+    const workout = await Workout.create({ title, reps, load });
     res.status(200).json(workout);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(400).json({ error: errorMsg });
   }
 };
 

@@ -35,3 +35,8 @@ div.error {
   border-radius: 4px;
   margin: 20px 0;
 }
+
+input.error {
+  border-color: var(--error);
+  /* You can add other styles as needed, such as background-color or text color */
+}
