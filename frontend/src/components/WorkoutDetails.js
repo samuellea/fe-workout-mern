@@ -12,8 +12,7 @@ const WorkoutDetails = ({ workout }) => {
     });
     const json = await response.json();
     if (response.ok) {
-      const workoutsMinusDeleted = workouts.filter((e) => e._id !== json._id);
-      dispatch({ type: 'DELETE_WORKOUT', payload: workoutsMinusDeleted });
+      dispatch({ type: 'DELETE_WORKOUT', payload: json });
     }
   };
 
