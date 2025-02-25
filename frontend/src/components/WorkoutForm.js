@@ -32,6 +32,7 @@ const WorkoutForm = () => {
       setReps('');
       // now update the context, so our global state is in sync with the db
       dispatch({ type: 'CREATE_WORKOUT', payload: json });
+      // const updatedWorkouts = [...workouts.filter(e => e.id !== id), json]
     }
   };
 
