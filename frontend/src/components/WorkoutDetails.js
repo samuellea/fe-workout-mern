@@ -8,7 +8,7 @@ const WorkoutDetails = ({ workout }) => {
   const { _id, title, reps, load, createdAt } = workout;
 
   const handleClick = async () => {
-    const response = await fetch(`/api/workouts/${_id}`, {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/${_id}`, {
       method: 'DELETE',
     });
     const json = await response.json();

@@ -9,8 +9,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchWorkouts = async () => {
-      // we omit the "http://localhost:4000" part of our backend API URL, because we have it stored in "proxy" field of our package.json (for bypassing CORS blocking during dev)
-      const response = await fetch('/api/workouts');
+      const response = await fetch(`${process.env.REACT_APP_API_URL}`);
       const json = await response.json();
       if (response.ok) {
         // setWorkouts(json);
@@ -19,7 +18,7 @@ const Home = () => {
     };
 
     fetchWorkouts();
-  }, [dispatch]); // if any logic inside your useEffect uses external functions ('dependencies'), you have to declare them
+  }, [dispatch]);
 
   return (
     <div className="home">
