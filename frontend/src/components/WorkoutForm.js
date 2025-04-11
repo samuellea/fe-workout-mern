@@ -3,7 +3,7 @@ import styles from '../styles/WorkoutForm.module.css';
 import { useWorkoutsContext } from '../hooks/useWorkoutsContext';
 
 const WorkoutForm = () => {
-  const { workouts, dispatch } = useWorkoutsContext();
+  const { dispatch } = useWorkoutsContext(); // can also destructure 'workouts'
 
   const [title, setTitle] = useState('');
   const [load, setLoad] = useState('');
